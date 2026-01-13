@@ -46,11 +46,11 @@ export class ButtonManager{
         this.buttons.forEach(btn => btn.showOrder());
     }
 
-    enableClicks(){
-        this.buttons.forEach(btn => btn.disableClick());
-    }
-
     enableClicks(handler){
         this.buttons.forEach(btn => btn.enableClick(() => handler(btn)));
+    }
+
+    disableClicks(){
+        this.buttons.forEach(btn => btn.disableClick());
     }
 }

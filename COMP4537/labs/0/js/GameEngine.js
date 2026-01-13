@@ -44,13 +44,15 @@ export class GameEngine{
             this.expectedIndex++;
 
             if(this.expectedIndex === this.manager.buttons.length){
-                alert(USER_MESSAGES.MSG_RIGHT);
+                this.locked = true;
                 this.manager.disableClicks();
+                alert(USER_MESSAGES.MSG_RIGHT);
             } 
         } else{
-            alert(USER_MESSAGES.MSG_WRONG);
+            this.locked = true;
             this.manager.showOrders();
             this.manager.disableClicks();
+            alert(USER_MESSAGES.MSG_WRONG);
         }
     }
 
