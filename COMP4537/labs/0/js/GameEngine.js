@@ -5,12 +5,14 @@ export class GameEngine{
         this.manager = buttonManager;
         this.expectedIndex = 0;
         this.locked = true;
+        this.startTimeout = null;
     }
 
     start(count){
+        this.reset();
         this.manager.createButtons(count);
         this.manager.arrangeInRow();
-        setTimeout(() => {
+        this.startTimeout = setTimeout(() => {
             this.startScramble(count);
         }, count * 1000);
     }
@@ -61,6 +63,10 @@ export class GameEngine{
     }
 
     reset(){
+        if (this.startTimeout) {
+            clearTimeout(this.startTimeout);
+            this.startTimeout = null;
+        }
         this.manager.clear();
         this.expectedIndex = 0;
         this.locked = true;
