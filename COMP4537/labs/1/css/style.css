@@ -1,17 +1,19 @@
 a {
   text-decoration: none;
 }
- .note-display { 
+
+.note-display { 
   width: 300px; 
   background-color: #4a76c5; 
   color: white; padding: 10px; 
   margin-bottom: 10px; 
   white-space: pre-wrap; 
 }
+
 #status { 
   text-align: right;
-   margin: 10px; 
-   font-family: sans-serif;
+  margin: 10px; 
+  font-family: sans-serif;
 }
 
 textarea { 
